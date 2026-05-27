@@ -9,7 +9,12 @@
     <h2>Amazing Image</h2>
     <div>
         <ul id="images">
-        <li><img width="200px" id="girl"src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80" alt="girl"></li>
+        <li><img width="150px" id="boy"src="KAIF.jpeg" alt="boy"></li>
+        <li><img width="150px" id="Mountain"src="Mountain.jpg" alt="Mountain"></li> 
+        <li><img width="150px" id="car"src="car.jpg" alt="car"></li> 
+        <li><img width="150px" id="penguin"src="penguin.jpg" alt="penguin"></li> 
+
+        <li><a style="color:blue" href="https://google.com" id="google">Google</a> </li>
         </ul> 
     </div>
 
@@ -20,8 +25,36 @@
 // /        alert("Clicked on Girl"); 
 //              }; 
 
-            document.getElementById('girl').addEventListener('click',function(){
-                alert("Clicked on Girl")
-            })
+  //type,timestamp ,defaultPrevented
+            //target,toElement ,srcElement,currentTarget,
+            //clientX,clientY ,screenX,scrrenY
+            //altkey,ctrlkey,shiftkey,keyCode
+
+            document.getElementById('boy').addEventListener('click',function(e){
+              //  console.log(e);
+    e.preventDefault();
+             // console.log("Clicked on Boy");
+          //    e.stopPropagation()
+              
+                
+          //      alert("Clicked on Boy")
+            },false)
+           document.getElementById('google').addEventListener('click',function(e){
+            e.preventDefault();
+         // console.log("Google Clicked");
+          
+          
+           },false)
+           document.querySelector('#images').addEventListener('click',function(e){
+            console.log(e.target.tagName);
+                        if (e.target.tagName=='IMG'){
+                            console.log(e.target.id);                     
+            let removeIt=e.target.parentNode
+            removeIt.remove()
+
+            //removeIt.parentNode.removeChild(removeIt)
+                        }
+            
+           })
  </script>
 </html>
